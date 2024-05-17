@@ -1,7 +1,7 @@
 let noteForm;
 let noteTitle;
 let noteText;
-let saveNoteBtn;
+let saveNoteBtn=document.querySelector('.save-note');
 let newNoteBtn;
 let noteList;
 
@@ -13,7 +13,7 @@ if (window.location.pathname === '/notes') {
   newNoteBtn = document.querySelector('.new-note');
   clearBtn = document.querySelector('.clear-btn');
   noteList = document.querySelectorAll('.list-container .list-group');
-}
+};
 
 // Show an element
 const show = (elem) => {
