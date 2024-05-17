@@ -13,19 +13,27 @@ let notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
  
 app.use(express.static('public'));
 
-app.get('/notes', (req, res) => 
+app.get('/notes', (req, res) => {
+  console.log(req)
+  console.log(res)
   res.sendFile(path.join(__dirname, '../../notes.html'))
-);
+});
 
-app.get('/', (req, res) => 
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../../index.html'))
-);
+  console.log(req)
+  console.log(res)
+});
 
 app.get('/api/notes', (req, res) => {
   res.json(notes)
+  console.log(req)
+  console.log(res)
 });
 
 app.post('/api/notes',(req, res) => {
+  console.log(req)
+  console.log(res)
   let newNote = req.body;
   console.log(newNote)
   //newNote.id = uuidv4();
